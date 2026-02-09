@@ -1,0 +1,16 @@
+package com.nam.exfive;
+import java.util.function.Supplier;
+import java.util.function.Consumer;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Supplier<Double> randomSupplier = () -> Math.random() * 100;
+
+        Consumer<Double> printConsumer =
+                n -> System.out.println("Số may mắn: " + n);
+
+        Double luckyNumber = randomSupplier.get();
+        printConsumer.accept(luckyNumber);
+    }
+}
